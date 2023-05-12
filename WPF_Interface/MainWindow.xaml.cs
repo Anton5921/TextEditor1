@@ -86,6 +86,14 @@ namespace TextEditor
         {
             textBox.FontWeight = FontWeights.Bold;
         }
+        
+         private void TextColor_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = (MenuItem)sender;
+            string colorName = menuItem.Tag.ToString();
+            Color color = (Color)ColorConverter.ConvertFromString(colorName);
+            textBox.Foreground = new SolidColorBrush(color);
+        }
 
         private string filename;
 
